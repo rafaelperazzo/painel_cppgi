@@ -1,6 +1,7 @@
 import {Autocomplete, Grid, TextField} from "@mui/material";
 import {useState} from "react";
 import Total from "./Total";
+import Tabela from "./Tabela";
 
 function Editais(props) {
     function handleChange(e,v) {
@@ -80,7 +81,8 @@ function Editais(props) {
                     renderInput={(params) => <TextField {...params} label="Grande Área" />}
                 />
             </Grid>
-          <Total edital={edital} tipo={4} tipoTrabalho={tipo_trabalho} area={area}/>
+            <Total edital={edital} tipo={4} tipoTrabalho={tipo_trabalho} area={area}/>
+            <Tabela edital={edital} tipo={1} tipoTrabalho={tipo_trabalho} area={area}/>
       </>
     );
 }

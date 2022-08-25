@@ -9,6 +9,7 @@ function Total(props) {
     const [loading,setLoading] = useState(true);
 
     useEffect(()=>{
+
         setLoading(true);
            axios.get("https://sci01-ter-jne.ufca.edu.br/cppgi/api/submissoes/"
                + props.tipo + "/" + props.edital + "/" + props.tipoTrabalho + "/" + props.area)
