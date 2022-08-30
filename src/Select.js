@@ -1,7 +1,8 @@
-import {Autocomplete, Grid, TextField} from "@mui/material";
+import {Alert, Autocomplete, Grid, TextField} from "@mui/material";
 import {useState} from "react";
 import Total from "./Total";
 import Tabela from "./Tabela";
+import GraficoDatas from "./GraficoDatas";
 
 function Editais(props) {
     function handleChange(e,v) {
@@ -56,7 +57,7 @@ function Editais(props) {
                   id="combo"
                   options={props.editais}
                   sx={{ width: 400 }}
-                  renderInput={(params) => <TextField {...params} label="Editais" />}
+                  renderInput={(params) => <TextField {...params} label="Evento" />}
               />
           </Grid>
             <Grid item={true} xs={4} display="flex" justifyContent="center" alignItems="center">
@@ -82,7 +83,13 @@ function Editais(props) {
                 />
             </Grid>
             <Total edital={edital} tipo={4} tipoTrabalho={tipo_trabalho} area={area}/>
+            <div style={{ width: '100%', padding:'10px'}}>
+                <Alert variant={"filled"} icon={false} severity="info">Lista de Submissões</Alert>
+            </div>
             <Tabela edital={edital} tipo={1} tipoTrabalho={tipo_trabalho} area={area}/>
+            <div style={{ width: '100%',height:'400px', padding:'10px'}}>
+                <GraficoDatas edital={edital} tipo={5} tipoTrabalho={tipo_trabalho} area={area}/>
+            </div>
       </>
     );
 }

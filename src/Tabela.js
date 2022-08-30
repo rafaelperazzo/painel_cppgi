@@ -27,7 +27,7 @@ function Tabela(props) {
     return(
         <>
             <Grid item={true} xs={12} display="flex" justifyContent="center" alignItems="center">
-                <div style={{ height: 500, width: '100%' }}>
+                <div style={{ height: 400, width: '100%' }}>
                     <DataGrid rows={dados} columns={colunas} getRowHeight={() => 'auto'}/>
                 </div>
             </Grid>

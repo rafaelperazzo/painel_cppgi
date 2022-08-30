@@ -6,6 +6,7 @@ import Editais from "./Select";
 
 function App() {
   const [editais,setEditais] = useState([]);
+  document.title = "Painel de Estatísticas CONPESQ"
   useEffect(()=>{
     axios.get("https://sci01-ter-jne.ufca.edu.br/cppgi/api/editais")
         .then(res=>{
