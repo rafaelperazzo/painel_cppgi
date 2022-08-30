@@ -1,7 +1,15 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {DataGrid} from "@mui/x-data-grid";
+import {DataGrid, GridToolbarContainer, GridToolbarExport} from "@mui/x-data-grid";
 import {Grid} from "@mui/material";
+
+function CustomToolbar() {
+    return (
+        <GridToolbarContainer>
+            <GridToolbarExport />
+        </GridToolbarContainer>
+    );
+}
 
 function Tabela(props) {
     const [loading,setLoading] = useState(true);
@@ -28,7 +36,11 @@ function Tabela(props) {
         <>
             <Grid item={true} xs={12} display="flex" justifyContent="center" alignItems="center">
                 <div style={{ height: 400, width: '100%' }}>
-                    <DataGrid rows={dados} columns={colunas} getRowHeight={() => 'auto'}/>
+                    <DataGrid rows={dados} columns={colunas} getRowHeight={() => 'auto'}
+                      components={{
+                          Toolbar: CustomToolbar,
+                      }}
+                    />
                 </div>
             </Grid>
         </>

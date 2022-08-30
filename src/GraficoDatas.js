@@ -42,7 +42,7 @@ function GraficoDatas(props) {
                     <YAxis />
                     <Tooltip />
                     <Legend verticalAlign={"top"} />
-                    <Bar name="total de submissões" dataKey="total" stackId="a" fill="#8884d8" />
+                    <Bar name="total de submissões" dataKey="total" stackId="a" fill="#000000" />
                 </BarChart>
             </ResponsiveContainer>
         </>
